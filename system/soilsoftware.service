@@ -1,0 +1,15 @@
+[Unit]
+Description=Soil Software Service
+After=network.target
+
+[Service]
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/python3 /home/pi/SoilSoftware/build/main.py
+WorkingDirectory=/home/pi/SoilSoftware/build
+StandardOutput=journal
+StandardError=journal
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
